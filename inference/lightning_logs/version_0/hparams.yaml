@@ -1,0 +1,51 @@
+config:
+  cls:
+    backbone: vit_base
+    checkpoint: /Users/vishi/VSC Codes/VisLM_Seminar/VLP-Seminar/checkpoints/cheXzero/visual.ckpt
+    dropout: 0.0
+    embed_dim: 128
+    freeze: true
+    img_size: 224
+    in_features: 768
+    lr: 0.0005
+    multilabel: false
+    num_classes: 2
+    pretrained: true
+    weight_decay: 1.0e-06
+  dataset:
+    dataset_dir: /Users/vishi/VSC Codes/VisLM_Seminar/VLP-Seminar/data/rsna-pneumonia-detection-challenge
+    img_size: 224
+    test_csv: /Users/vishi/VSC Codes/VisLM_Seminar/VLP-Seminar/annotations/rsna/train.csv
+    train_csv: /Users/vishi/VSC Codes/VisLM_Seminar/VLP-Seminar/annotations/rsna/train.csv
+    valid_csv: /Users/vishi/VSC Codes/VisLM_Seminar/VLP-Seminar/annotations/rsna/train.csv
+  det:
+    backbone: resnet_50
+    checkpoint: C:\Users\Vishi\VSC Codes\VIsLM_seminar\VLP-Seminar\data\checkpoints\resNet
+      checkpoints\ckpt-0.data-00000-of-00001
+    conf_thres: 0.5
+    freeze: true
+    img_size: 224
+    iou_thres:
+    - 0.4
+    - 0.45
+    - 0.5
+    - 0.55
+    - 0.6
+    - 0.65
+    - 0.7
+    - 0.75
+    lr: 0.0005
+    max_objects: 10
+    nms_thres: 0.5
+    pretrained: true
+    weight_decay: 1.0e-06
+  seg:
+    backbone: vit_base
+    checkpoint: C:\Users\Vishi\VSC Codes\VIsLM_seminar\VLP-Seminar\data\checkpoints\chexZero
+      checkpoints\best_64_0.0001_original_16000_0.861.pt
+    embed_dim: 128
+    freeze: true
+    img_size: 224
+    lr: 2e-4
+    pretrained: true
+    weight_decay: 0.05
